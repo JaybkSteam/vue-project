@@ -2,12 +2,13 @@
 
 let timeTab = [ {
         tab: null,
-        items: ['Day', 'Week', 'Month', 'Year'],
+        items: ['Home', 'Week', 'Month'],
         text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
 }]
 
-async function fetchData() {
-  let result = await fetch("https://holidays.abstractapi.com/v1/?api_key=1655f53d1cdd40048392782e5a54db11&country=US&year=2023&month=6&day=5")
+async function test() {
+  let result = await fetch("https://holidays.abstractapi.com/v1/?api_key=1655f53d1cdd40048392782e5a54db11&country=US&year=2023&month=6&day=5");
+
   console.log(result)
 }
 
@@ -15,37 +16,33 @@ async function fetchData() {
 
 
 
-<template>
+<template v-slot:extension>
 
 <v-card>
 
-<v-toolbar color="blue">
+<v-toolbar color="#1A237E">
 
-  <v-app-bar-nav-icon></v-app-bar-nav-icon>
+  <v-icon icon="md:event"></v-icon>
 
-  <v-toolbar-title>date</v-toolbar-title>
+  <v-toolbar-title>Student Holiday Calendar</v-toolbar-title>
 
   <v-spacer></v-spacer>
 
-  <template v-slot:extension>
-
     <v-tabs v-model="tab" align-tabs="title">
 
-      <v-tabs>
+      <v-tab>
         <router-link to="/" class="timenav">Home</router-link>
-      </v-tabs>
+      </v-tab>
 
-      <v-tabs>
+      <v-tab>
         <router-link to="/Day" class="timenav">Day</router-link>
-      </v-tabs>
+      </v-tab>
 
-      <v-tabs>
+      <v-tab>
         <router-link to="/Week" class="timenav">Week</router-link>
-      </v-tabs>
+      </v-tab>
 
     </v-tabs>
-
-  </template>
 
 </v-toolbar>
 
@@ -65,17 +62,53 @@ async function fetchData() {
 
 </v-card>
 
+<!--
 
-<button @click="test"></button>
+  <div class="text-center">
+    <div>
+      <v-btn class="ma-2" color="primary">
+        Accept
+      </v-btn>
 
+      <v-btn class="ma-2" color="red">
+        Decline
+      </v-btn>
 
+      <v-btn class="ma-2">
+        Cancel
+      </v-btn>
+    </div>
+
+    <div>
+      <v-btn class="ma-2" color="orange-darken-2">
+        Back
+      </v-btn>
+    </div>
+
+    <div>
+      <v-btn
+        class="ma-2"
+        variant="text"
+        icon="mdi-thumb-up"
+        color="blue-lighten-2"
+      ></v-btn>
+
+      <v-btn
+        class="ma-2"
+        variant="text"
+        icon="mdi-thumb-down"
+        color="red-lighten-2"
+      ></v-btn>
+    </div>
+  </div>
+
+-->
+<img src="/public/logo.png" alt="">
 <router-view></router-view>
 
-  <h1>June 1st 2023</h1>
+  <h1>June 5 2023</h1>
 
-  <router-link to="/" class="timenav">Home</router-link>
-  <router-link to="/Week" class="timenav">Week</router-link>
-  <router-link to="/Day" class="timenav">Day</router-link>
+  <button to="/" @click="test" class="j">Home</button>
 
     <div class="wrapper">
 
@@ -103,9 +136,14 @@ async function fetchData() {
 
 @import url("https://cdn.jsdelivr.net/npm/vuetify@3.3.2/dist/vuetify-labs.css");
 
+
   .timenav {
-    position: relative;
-    padding: 0px 10px 0px 10px;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+  }
+
+  .timenav:active {
+    text-decoration: none;
   }
 
 </style>

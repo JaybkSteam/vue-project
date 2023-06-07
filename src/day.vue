@@ -68,7 +68,7 @@ let messages = [
         <v-card-text>
           <div class="font-weight-bold ms-1 mb-2">Today</div>
 
-          <v-timeline density="compact" align="start">
+          <v-timeline density="compact" align-tabs ="start">
 
             <v-timeline-item
               v-for="message in messages"
