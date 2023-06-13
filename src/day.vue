@@ -3,21 +3,21 @@
 let messages = [
         {
           from: '',
-          message: 'loreum ipsum',
+          message: 'wake up and get dressed and eat breakfeast ',
           time: '10:30am',
-          color: 'deep-purple-lighten-1',
+          color: '#FF9100',
         },
         {
           from: '',
-          message: 'loreum ipsum',
+          message: 'Leave for school',
           time: '12:00am',
-          color: 'green',
+          color: '#2979FF',
         },
         {
           from: '',
-          message: 'loreum ipsum',
+          message: 'go to bed',
           time: '9:45pm',
-          color: 'deep-purple-lighten-1',
+          color: '#FF9100',
         },
       ]
 
@@ -35,7 +35,7 @@ let messages = [
 
       <v-card width="4000">
 
-        <v-img height="500" src="https://images.unsplash.com/photo-1519750783826-e2420f4d687f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cHJldHR5JTIwYmFja2dyb3VuZHxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80" cover class="text-white">
+        <v-img height="200" src="https://images.pexels.com/photos/2893556/pexels-photo-2893556.jpeg?cs=srgb&dl=pexels-nicole-avagliano-2893556.jpg&fm=jpg" cover class="text-white">
 
           <v-toolbar color="rgba(0, 0, 0, 0)" theme="dark">
 
@@ -68,7 +68,7 @@ let messages = [
         <v-card-text>
           <div class="font-weight-bold ms-1 mb-2">Today</div>
 
-          <v-timeline density="compact" align-tabs ="start">
+          <v-timeline density="compact" align="start">
 
             <v-timeline-item
               v-for="message in messages"
